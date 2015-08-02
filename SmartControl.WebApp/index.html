@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Sky</title>
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #background {
+            background-color: #444349;
+            z-index: -1000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+            #background > canvas {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        #wapper {
+            background-color: #fff;
+            border: 1px solid #c0c0c0;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: #000 1px 1px 10px;
+            -webkit-box-shadow: #000 1px 1px 10px;
+            box-shadow: #000 1px 1px 10px;
+            width: 400px;
+            margin: 180px auto;
+            padding: 30px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wapper">
+        <h3 class="text-center">Smart Control</h3>
+        <hr />
+        <div class="input-group">
+            <input id="txt_token" type="text" class="form-control input-lg" placeholder="Your Token...">
+            <span class="input-group-btn">
+                <button id="btn_start" class="btn btn-default btn-lg" type="button">Start</button>
+            </span>
+        </div>
+    </div>
+    <div id="background"></div>
+    <script type="text/javascript">
+        function getRandom(min, max) {
+            return Math.random() * (max + min) + min;
+        }
+
+        function getStyle(i) {
+            return '#fff';
+            switch (i % 5) {
+                case 0:
+                    return "#C2F012";
+                case 1:
+                    return "#87F2D4";
+                case 2:
+                    return "#C1E6E2";
+                case 3:
+                    return "#C2CDCF";
+                case 4:
+                    return "#679EB8";
+            }
+        }
+
+        window.onload = function () {
+            var layerCount = 3;
+            var fps = 60;
+            // 初始化界面上的所有上下文
+            var background = document.getElementById('background');
+            var layers = [];
+            for (var i = layerCount + 1; i > 0; i--) {
+                var canvas = document.createElement('canvas');
+                canvas.width = background.clientWidth;
+                canvas.height = background.clientHeight;
+                background.appendChild(canvas);
+                var context = canvas.getContext('2d');
+                var layer = {
+                    canvas: canvas,
+                    context: context,
+                    stars: []
+                };
+                for (var j = getRandom(50, 100) ; j > 0; j--) {
+
+                    layer.stars.push({
+                        position: {
+                            x: getRandom(0, canvas.width),
+                            y: getRandom(0, canvas.height)
+                        },
+                        velocity: {
+                            x: i * 0.8,
+                            y: i * 0.5
+                        },
+                        style: getStyle(j),
+                        radius: getRandom(0.5, 1)
+                    });
+                };
+                layers.push(layer);
+            };
+
+            /**
+             * 更新界面元素
+             */
+            function update() {
+                layers.forEach(function (layer) {
+
+                    layer.stars.forEach(function (item) {
+                        item.position.x += item.velocity.x;
+                        if (item.position.x >= layer.canvas.width) {
+                            item.position.x = 0;
+                        }
+                        item.position.y += item.velocity.y;
+                        if (item.position.y >= layer.canvas.height) {
+                            item.position.y = 0;
+                        }
+                    });
+
+                });
+            }
+
+            /**
+             * 重新绘制界面
+             */
+            function render() {
+                layers.forEach(function (layer) {
+                    // 快速清除界面并重置画布
+                    layer.canvas.width = background.clientWidth;
+                    layer.canvas.height = background.clientHeight;
+
+                    layer.stars.forEach(function (item) {
+                        layer.context.beginPath();
+                        layer.context.arc(item.position.x, item.position.y, item.radius, 0, Math.PI * 2);
+                        layer.context.fillStyle = item.style;
+                        layer.context.closePath();
+                        layer.context.fill();
+                    });
+
+                });
+            }
+
+            setInterval(function () {
+                update();
+                render();
+            }, 1000 / fps);
+
+            document.querySelector('#btn_start').addEventListener('click', function () {
+                var token = document.querySelector('#txt_token').value;
+                window.location.href = '/slides/?token=' + token;
+            });
+        };
+    </script>
+</body>
+
+</html>

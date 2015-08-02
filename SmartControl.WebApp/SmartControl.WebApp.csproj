@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49C6B1F0-08BC-4B98-9EFB-9A7A37CCD0D3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartControl.WebApp</RootNamespace>
+    <AssemblyName>SmartControl.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\lib\bootstrap\js\npm.js" />
+    <Content Include="index.html" />
+    <Content Include="packages.config" />
+    <Content Include="assets\lib\jquery\jquery-2.1.4.min.map" />
+    <Content Include="slides\.travis.yml" />
+    <Content Include="slides\bower.json" />
+    <Content Include="slides\CONTRIBUTING.md" />
+    <Content Include="slides\css\reveal.scss" />
+    <Content Include="slides\css\theme\README.md" />
+    <Content Include="slides\css\theme\source\beige.scss" />
+    <Content Include="slides\css\theme\source\black.scss" />
+    <Content Include="slides\css\theme\source\blood.scss" />
+    <Content Include="slides\css\theme\source\league.scss" />
+    <Content Include="slides\css\theme\source\moon.scss" />
+    <Content Include="slides\css\theme\source\night.scss" />
+    <Content Include="slides\css\theme\source\serif.scss" />
+    <Content Include="slides\css\theme\source\simple.scss" />
+    <Content Include="slides\css\theme\source\sky.scss" />
+    <Content Include="slides\css\theme\source\solarized.scss" />
+    <Content Include="slides\css\theme\source\white.scss" />
+    <Content Include="slides\css\theme\template\mixins.scss" />
+    <Content Include="slides\css\theme\template\settings.scss" />
+    <Content Include="slides\css\theme\template\theme.scss" />
+    <Content Include="slides\lib\font\league-gothic\league-gothic.eot" />
+    <Content Include="slides\lib\font\league-gothic\league-gothic.ttf" />
+    <Content Include="slides\lib\font\league-gothic\league-gothic.woff" />
+    <Content Include="slides\lib\font\league-gothic\LICENSE" />
+    <Content Include="slides\lib\font\source-sans-pro\LICENSE" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-italic.eot" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-italic.ttf" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-italic.woff" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-regular.eot" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-regular.ttf" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-regular.woff" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibold.eot" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibold.ttf" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibold.woff" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibolditalic.eot" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibolditalic.ttf" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro-semibolditalic.woff" />
+    <Content Include="slides\LICENSE" />
+    <Content Include="slides\package.json" />
+    <Content Include="slides\plugin\markdown\example.md" />
+    <Content Include="slides\README.md" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="assets\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\lib\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\lib\jquery\jquery-2.1.4.js" />
+    <Content Include="assets\lib\jquery\jquery-2.1.4.min.js" />
+    <Content Include="assets\lib\signalr\jquery.signalR-2.2.0.js" />
+    <Content Include="assets\lib\signalr\jquery.signalR-2.2.0.min.js" />
+    <Content Include="slides\.gitignore" />
+    <Content Include="slides\css\print\paper.css" />
+    <Content Include="slides\css\print\pdf.css" />
+    <Content Include="slides\css\reveal.css" />
+    <Content Include="slides\css\theme\beige.css" />
+    <Content Include="slides\css\theme\black.css" />
+    <Content Include="slides\css\theme\blood.css" />
+    <Content Include="slides\css\theme\league.css" />
+    <Content Include="slides\css\theme\moon.css" />
+    <Content Include="slides\css\theme\night.css" />
+    <Content Include="slides\css\theme\serif.css" />
+    <Content Include="slides\css\theme\simple.css" />
+    <Content Include="slides\css\theme\sky.css" />
+    <Content Include="slides\css\theme\solarized.css" />
+    <Content Include="slides\css\theme\white.css" />
+    <Content Include="slides\Gruntfile.js" />
+    <Content Include="slides\index.html" />
+    <Content Include="slides\js\reveal.js" />
+    <Content Include="slides\lib\css\zenburn.css" />
+    <Content Include="slides\lib\font\league-gothic\league-gothic.css" />
+    <Content Include="slides\lib\font\source-sans-pro\source-sans-pro.css" />
+    <Content Include="slides\lib\js\classList.js" />
+    <Content Include="slides\lib\js\head.min.js" />
+    <Content Include="slides\lib\js\html5shiv.js" />
+    <Content Include="slides\plugin\highlight\highlight.js" />
+    <Content Include="slides\plugin\leap\leap.js" />
+    <Content Include="slides\plugin\markdown\example.html" />
+    <Content Include="slides\plugin\markdown\markdown.js" />
+    <Content Include="slides\plugin\markdown\marked.js" />
+    <Content Include="slides\plugin\math\math.js" />
+    <Content Include="slides\plugin\multiplex\client.js" />
+    <Content Include="slides\plugin\multiplex\index.js" />
+    <Content Include="slides\plugin\multiplex\master.js" />
+    <Content Include="slides\plugin\notes-server\client.js" />
+    <Content Include="slides\plugin\notes-server\index.js" />
+    <Content Include="slides\plugin\notes-server\notes.html" />
+    <Content Include="slides\plugin\notes\notes.html" />
+    <Content Include="slides\plugin\notes\notes.js" />
+    <Content Include="slides\plugin\print-pdf\print-pdf.js" />
+    <Content Include="slides\plugin\remotes\remotes.js" />
+    <Content Include="slides\plugin\search\search.js" />
+    <Content Include="slides\plugin\zoom-js\zoom.js" />
+    <Content Include="slides\test\examples\assets\image1.png" />
+    <Content Include="slides\test\examples\assets\image2.png" />
+    <Content Include="slides\test\examples\barebones.html" />
+    <Content Include="slides\test\examples\embedded-media.html" />
+    <Content Include="slides\test\examples\math.html" />
+    <Content Include="slides\test\examples\slide-backgrounds.html" />
+    <Content Include="slides\test\examples\slide-transitions.html" />
+    <Content Include="slides\test\qunit-1.12.0.css" />
+    <Content Include="slides\test\qunit-1.12.0.js" />
+    <Content Include="slides\test\test-markdown-element-attributes.html" />
+    <Content Include="slides\test\test-markdown-element-attributes.js" />
+    <Content Include="slides\test\test-markdown-slide-attributes.html" />
+    <Content Include="slides\test\test-markdown-slide-attributes.js" />
+    <Content Include="slides\test\test-markdown.html" />
+    <Content Include="slides\test\test-markdown.js" />
+    <Content Include="slides\test\test-pdf.html" />
+    <Content Include="slides\test\test-pdf.js" />
+    <Content Include="slides\test\test.html" />
+    <Content Include="slides\test\test.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Hubs\ControlHub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10362</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:80/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
